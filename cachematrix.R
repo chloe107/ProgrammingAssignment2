@@ -9,7 +9,7 @@
 ## [set the value of the matrix, get the value of the matrix, set the value of the inverse, get the value of the inverse]
 
 makeCacheMatrix <- function(x = matrix()) {
-    # declare a variable (inverse_matrix) for the inverse matrix
+    # declare a variable (inverse_matrix) for the inverse of the matrix
     inverse_matrix <- NULL
 
     # set the value of the matrix
@@ -23,7 +23,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
     # set the value of the inverse matrix
     set_inverse <- function(inverse) inverse_matrix <<- inverse
-    
+	
 	# get the value of the inverse matrix
     get_inverse <- function() inverse_matrix
 
@@ -37,7 +37,8 @@ makeCacheMatrix <- function(x = matrix()) {
 ## return cached inverse of the matrix if the inverse of the matrix has already been calculated
 
 cacheSolve <- function(x, ...) {
-    inverse_matrix <- x$get_inverse()
+    # return a matrix that is the inverse of 'x'
+	inverse_matrix <- x$get_inverse()
 
     # return the inverse matrix if it has been calculated
     if (!is.null(inverse_matrix)) {
